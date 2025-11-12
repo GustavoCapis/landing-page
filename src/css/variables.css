@@ -1,0 +1,16 @@
+/*:root armazena as variáveis globais*/
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-1: #eee4db;
+  --color-neutral-2: #d4c3b6;
+
+  --color-main: #3b82f6;
+  --color-secondary: #7c3aed;
+
+  --color-background: #1e1b4b;
+
+  --color-highlight: #eaafff69;
+  
+  --color-main-text: #F9FAFB;
+  --color-secondary-text: #D1D5DB;
+}

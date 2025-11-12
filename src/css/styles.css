@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url("variables.css");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend", sans-serif;
+}
+
+header {
+  background-color: var(--color-highlight);
+  padding: 12px 4%;
+  position: sticky; /*Quando o usuário rola a página e o elemento atinge o limite definido (top: 0), ele “cola” ali e fica fixo até que o container dele acabe. */
+  top: 0;
+  z-index: 1; /*Define a ordem de empilhamento dos elementos na tela de acordo com o numero passado*/
+}
+
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .navbar .logo {
+  width: 180px;
+}
+
+header .navbar ul {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  background-color: var(--color-highlight);
+  left: 0px;
+  padding: 1rem;
+}
+
+header .navbar ul.show {
+  display: flex;
+}
+
+header .navbar ul li {
+  text-align: center;
+}
+
+header .navbar ul li a {
+  color: var(--color-secondary);
+}
+
+header .navbar .btn-default {
+  display: none;
+}
+
+
+body {
+    min-height: 100vh;
+}
