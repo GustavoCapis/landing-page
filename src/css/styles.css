@@ -8,25 +8,67 @@
   font-family: "Lexend", sans-serif;
 }
 
+/* centralized container mobile-first */
+#main-container {
+  display: grid;
+
+  grid-template-areas:
+    "header"
+    "article";
+ 
+}
+
 header {
-  background-color: var(--color-highlight);
+  grid-area: header;
+  background-color: var(--color-header);
   padding: 12px 4%;
   position: sticky; /*Quando o usuário rola a página e o elemento atinge o limite definido (top: 0), ele “cola” ali e fica fixo até que o container dele acabe. */
   top: 0;
-  z-index: 1; /*Define a ordem de empilhamento dos elementos na tela de acordo com o numero passado*/
+  z-index: 100; /*Define a ordem de empilhamento dos elementos na tela de acordo com o numero passado*/
 }
 
-header .navbar {
+/* Brand title */
+#header-title {
+  color: var(--color-main-text);
+  margin: 1rem;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .navbar .logo {
+.logo {
   width: 180px;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
 }
 
-header .navbar ul {
+/* Aside menu - mobile: hidden by default */
+#sidebar {
+  grid-area: sidebar;
+  position: relative;
+}
+
+.btn-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid var(--color-main);
+  color: var(--color-main);
+  padding: 0.45rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#menu {
+  position: relative;
+}
+
+#nav-links {
   display: none;
   list-style: none;
   flex-direction: column;
@@ -34,28 +76,64 @@ header .navbar ul {
   width: 100%;
   position: absolute;
   top: 80px;
+  left: 0;
   background-color: var(--color-highlight);
-  left: 0px;
   padding: 1rem;
+  border-radius: 8px;
+  z-index: 90;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  transition: transform 180ms ease, opacity 180ms ease;
+  transform-origin: top;
+  opacity: 0;
+  transform: translateY(-6px) scaleY(0.98);
 }
 
-header .navbar ul.show {
+/* Class added by JS to show menu */
+nav-links.show {
   display: flex;
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
 }
 
-header .navbar ul li {
+/* links/menu items */
+#nav-links li {
   text-align: center;
 }
 
-header .navbar ul li a {
+#nav-links li a {
   color: var(--color-secondary);
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  display: block;
 }
 
-header .navbar .btn-default {
+/* botão padrão (visível em desktop) */
+.btn-default {
   display: none;
 }
 
-
 body {
-    min-height: 100vh;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+#article {
+  grid-area: article;
+}
+
+p {
+  padding: 1rem;
+  margin: 1rem;
+  color: var(--color-main-text);
+}
+
+#p1 {margin-top: 5rem;}
+
+.img{
+  display: block;         
+  margin: 0 auto;         
+  border-radius: 4%;
+  width: 80%;             
+  max-width: 300px;       
+  height: auto; 
 }

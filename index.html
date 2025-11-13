@@ -12,27 +12,80 @@
     />
   </head>
   <body>
-    <header>
-      <nav class="navbar">
-        <img src="src/images/my-melody-logo.png" alt="app-logo" class="logo" />
-        <p>Listen music with MyMelody</p>
-        <button class="button btn-mobile">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <ul id="nav-links" class="show">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">About Us</a>
-          </li>
-          <li>
-            <a href="#plans">Plans</a>
-          </li>
-        </ul>
-        
-        <a href="#" class="button btn-default">Contact Us</a>
-      </nav>
-    </header>
+    <!-- Main container  -->
+    <div id="main-container">
+      <header>
+        <nav class="navbar">
+          <img
+            src="src/images/my-melody-logo.png"
+            alt="app-logo"
+            class="logo"
+          />
+          <h1 id="header-title">Listen to music with MyMelody</h1>
+          <!-- Menu button mobile -->
+          <button id="menu-toggle" class="button btn-mobile">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
+      </header>
+      <!-- Aside menu container -->
+      <aside id="sidebar">
+        <div id="menu">
+          <ul id="nav-links">
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#about">About Us</a>
+            </li>
+            <li>
+              <a href="#plans">Subscriptions</a>
+            </li>
+            <li>
+              <a href="#" class="button btn-default">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <!-- Main content -->
+      <article id="article">
+        <p id="p1" class="paragraph">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, magni,
+          eum doloribus voluptatum nisi autem delectus amet animi officiis
+          dolores ipsa, maiores repellendus consequatur esse. Ab perspiciatis
+          vero aspernatur incidunt!
+        </p>
+        <img
+          class="img"
+          id="img1"
+          src="src/images/woman-listening-to-music.jpg"
+          alt="woman-listening-to-music"
+        />
+        <p class="paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+          veritatis beatae mollitia atque aut accusamus. Explicabo fugiat eaque
+          nihil laudantium, hic vel, labore error, minus excepturi ab assumenda
+          quod commodi?
+        </p>
+        <p class="paragraph">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+          quia dolorum consequatur veritatis facere consequuntur eos in quam
+          maxime magnam iste labore omnis asperiores, ut autem delectus
+          reprehenderit similique facilis.
+        </p>
+        <img
+          class="img"
+          id="img2"
+          src="src/images/man-listening-to-music.jpg"
+          alt="man-listening-to-music"
+        />
+        <p class="paragraph">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+          alias debitis et quaerat! Amet eveniet pariatur id quasi! Aut, numquam
+          ad aliquid non voluptatem quibusdam similique laborum iste totam
+          dignissimos.
+        </p>
+      </article>
+    </div>
   </body>
 </html>
