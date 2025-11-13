@@ -7,7 +7,7 @@
   padding: 0;
   font-family: "Lexend", sans-serif;
 }
-
+                                        /* ----HOMEPAGE---- */
 /* centralized container mobile-first */
 #main-container {
   display: grid;
@@ -225,5 +225,47 @@ footer {
     padding-bottom: 3vh;
     color: var(--color-highlight);
     
+  }
+}
+
+                        /* ----SUBSCRIPTION PAGE---- */
+/* Mobile-first */
+h3 {
+color: var(--color-main);
+font-weight:900;
+}
+
+.plans {
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.plan {
+  background-color: var(--color-highlight);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Media queries*/
+/* tablets and desktop*/
+@media screen and (min-width: 768px) {
+  .plans {
+    flex-direction: row;
+    justify-content: center; /* centraliza o grupo no container */
+    align-items: stretch;
+  }
+
+  .plan {
+    flex: 0 1 260px; /* largura base, flexível */
+    margin: 0 1rem;
+    max-width: none;
   }
 }
