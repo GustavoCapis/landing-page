@@ -15,7 +15,6 @@
   grid-template-areas:
     "header"
     "article";
- 
 }
 
 header {
@@ -35,7 +34,6 @@ header {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -107,7 +105,7 @@ nav-links.show {
   display: block;
 }
 
-/* botão padrão (visível em desktop) */
+/* default button (desktop visible) */
 .btn-default {
   display: none;
 }
@@ -127,13 +125,105 @@ p {
   color: var(--color-main-text);
 }
 
-#p1 {margin-top: 5rem;}
+#p1 {
+  margin-top: 2rem;
+}
 
-.img{
-  display: block;         
-  margin: 0 auto;         
+.img {
+  display: block;
+  margin: 0 auto;
   border-radius: 4%;
-  width: 80%;             
-  max-width: 300px;       
-  height: auto; 
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+}
+
+footer {
+  display: none;
+}
+
+/* Media queries*/
+/* tablets and desktop*/
+@media screen and (min-width: 768px) {
+  /* main container split in 2 columns */
+  #main-container {
+    grid-template-areas:
+      "header header sidebar"
+      "article article article"
+      "footer footer footer";
+    grid-template-columns: 250px 1fr;
+  }
+
+  header {
+    grid-area: header;
+    background-color: var(--color-header);
+    padding: 1rem;
+    top: auto;
+  }
+
+  #header-title {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  /* unhide sidebar */
+  #sidebar {
+    grid-area: sidebar;
+    background-color: var(--color-header);
+  }
+
+
+  /* hide mobile button */
+  .btn-mobile {
+    display: none;
+  }
+
+  /* Navbar links aparecem em linha (desktop/tablet) */
+  #nav-links {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background: none;
+    padding: 0;
+    gap: 1rem;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+  }
+
+  #nav-links li a {
+    color: var(--color-secondary-text);
+    text-decoration: none;
+    padding: 0.35rem 0.5rem;
+    position: static;
+    display: flex;
+    font-size: 1.5rem;
+  }
+
+  /* Botão desktop aparece */
+  .btn-default {
+    display: inline-flex;
+    margin-right: 20px;
+  }
+
+  /* Artigo com mais largura */
+  #article {
+    padding: 2rem;
+  }
+
+  /* Imagem centralizada com maior tamanho */
+  .img {
+    width: 60%;
+    max-width: 400px;
+  }
+
+  footer {
+    display: block;
+    grid-area: footer;
+    margin: 0 auto;
+    padding-bottom: 3vh;
+    color: var(--color-highlight);
+    
+  }
 }
