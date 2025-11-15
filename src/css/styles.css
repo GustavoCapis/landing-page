@@ -48,6 +48,19 @@ header {
 #sidebar {
   grid-area: sidebar;
   position: relative;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: var(--color-highlight);
+  padding-top: 80px;
+  transform: translateX(-100%);  /* hidden but allow animations unlike display: none */
+  transition: transform 250ms ease;
+  z-index: 200;
+}
+
+#sidebar.open {
+  transform: translateX(0);
 }
 
 .btn-mobile {
@@ -167,7 +180,7 @@ footer {
     font-size: 3rem;
   }
 
-  /* unhide sidebar */
+  /* unhide sidebar by default in desktop*/
   #sidebar {
     grid-area: sidebar;
     background-color: var(--color-header);
