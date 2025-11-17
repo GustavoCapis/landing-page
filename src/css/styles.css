@@ -14,6 +14,7 @@
 
   grid-template-areas:
     "header"
+    "sidebar"
     "article";
 }
 
@@ -47,14 +48,13 @@ header {
 /* Aside menu - mobile: hidden by default */
 #sidebar {
   grid-area: sidebar;
-  position: relative;
+  position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 220px;
   height: 100vh;
-  background-color: var(--color-highlight);
-  padding-top: 80px;
-  transform: translateX(-100%);  /* hidden but allow animations unlike display: none */
+  /* padding-top: 80px; */
+  transform: translateX(100%);  /* hidden but allow animations unlike display: none */
   transition: transform 250ms ease;
   z-index: 200;
 }
@@ -76,7 +76,7 @@ header {
 }
 
 #menu {
-  position: relative;
+  position: absolute;
 }
 
 #nav-links {
@@ -85,10 +85,10 @@ header {
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  background-color: var(--color-highlight);
+  position: relative;
+  top: 13rem;
+  left: 4rem;
+  background-color: #886ecff8;
   padding: 1rem;
   border-radius: 8px;
   z-index: 90;
@@ -100,7 +100,7 @@ header {
 }
 
 /* Class added by JS to show menu */
-nav-links.show {
+#nav-links.show {
   display: flex;
   opacity: 1;
   transform: translateY(0) scaleY(1);
@@ -112,7 +112,7 @@ nav-links.show {
 }
 
 #nav-links li a {
-  color: var(--color-secondary);
+  color: var(--color-header);
   text-decoration: none;
   padding: 0.35rem 0.5rem;
   display: block;
@@ -164,7 +164,7 @@ footer {
       "header header sidebar"
       "article article article"
       "footer footer footer";
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 1fr 1fr 300px ;
   }
 
   header {
