@@ -3,88 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
+    <title>MyMelody</title>
+    <meta
+      name="description"
+      content="MyMelody — fictional landing page for study purposes"
+    />
     <link rel="stylesheet" href="src/css/styles.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
     />
   </head>
-  <body>
+  <body class="home">
     <!-- Page wrapper  -->
     <div class="page-wrapper">
-      <header>
-        <nav class="navbar">
-          <img
-            src="src/images/my-melody-logo.png"
-            alt="MyMelody-logo"
-            class="logo"
-          />
-          <h1 class="header-title">Listen to music with MyMelody</h1>
-          <!-- Menu button mobile -->
-          <button class="button btn-mobile menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </nav>
+      <!-- HEADER -->
+      <header class="site-header" role="banner">
+        <div class="container">
+          <div class="brand">
+            <a href="/" class="brand-link" aria-label="MyMelody — home page">
+              <img
+                src="src/images/my-melody-logo.png"
+                alt="MyMelody logo"
+                class="logo"
+              />
+            </a>
+            <h1 class="header-title">Listen to music with MyMelody</h1>
+          </div>
+
+          <div class="top-controls">
+            <!-- Inline nav for larger screens (visible via CSS) -->
+            <nav class="inline-nav" aria-label="Main navigation">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="subscription.html">Subscription</a></li>
+              </ul>
+            </nav>
+
+            <!-- Mobile button that controls the sidebar -->
+            <button
+              class="btn btn-mobile"
+              id="menuToggle"
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Open sidebar menu"
+            >
+              <span class="sr-only">Open menu</span>
+              <!-- simple icon (replace with SVG or icon font if preferred) -->
+              ☰
+            </button>
+
+            <!-- Desktop-visible button -->
+            <a class="btn btn--ghost btn-default" href="#contact">Contact Us</a>
+          </div>
+        </div>
       </header>
-      <!-- Aside menu container -->
-      <aside class="sidebar">
-        <div class="menu">
-          <ul class="nav-links">
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="#about">About Us</a>
-            </li>
-            <li>
-              <a href="subscription.html">Subscription</a>
-            </li>
-            <li>
-              <a href="#" class="button btn-default">Contact Us</a>
-            </li>
-          </ul>
+      <!-- SIDEBAR (off-canvas) -->
+      <aside
+        id="sidebar"
+        class="sidebar sidebar--hidden"
+        role="navigation"
+        aria-label="Sidebar navigation"
+      >
+        <div class="container">
+          <button
+            class="sidebar__close"
+            aria-label="Close menu"
+            data-action="close-sidebar"
+          >
+            X
+          </button>
+          <nav class="sidebar__nav" aria-label="Site navigation">
+            <a class="sidebar__link" href="index.html">Home</a>
+            <a class="sidebar__link" href="#about">About Us</a>
+            <a class="sidebar__link" href="subscription.html">Subscription</a>
+            <a class="sidebar__link btn btn--accent" href="#contact"
+              >Contact Us</a
+            >
+          </nav>
         </div>
       </aside>
-      <!-- Main content -->
-      <article class="article">
-        <p class="paragraph p1">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, magni,
-          eum doloribus voluptatum nisi autem delectus amet animi officiis
-          dolores ipsa, maiores repellendus consequatur esse. Ab perspiciatis
-          vero aspernatur incidunt!
-        </p>
-        <img
-          class="img img1"
-          src="src/images/woman-listening-to-music.jpg"
-          alt="woman-listening-to-music"
-        />
-        <p class="paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-          veritatis beatae mollitia atque aut accusamus. Explicabo fugiat eaque
-          nihil laudantium, hic vel, labore error, minus excepturi ab assumenda
-          quod commodi?
-        </p>
-        <p class="paragraph">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-          quia dolorum consequatur veritatis facere consequuntur eos in quam
-          maxime magnam iste labore omnis asperiores, ut autem delectus
-          reprehenderit similique facilis.
-        </p>
-        <img
-          class="img img2"
-          src="src/images/man-listening-to-music.jpg"
-          alt="man-listening-to-music"
-        />
-        <p class="paragraph">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
-          alias debitis et quaerat! Amet eveniet pariatur id quasi! Aut, numquam
-          ad aliquid non voluptatem quibusdam similique laborum iste totam
-          dignissimos.
-        </p>
-      </article>
-      <footer>© 2025 MyMelody. All rights reserved.</footer>
+      <!-- MAIN -->
+      <main id="main" class="site-main" role="main">
+        <article class="article container">
+          <p class="paragraph paragraph--lead p1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, magni,
+            eum doloribus voluptatum nisi autem delectus amet animi officiis
+            dolores ipsa, maiores repellendus consequatur esse.
+          </p>
+
+          <img
+            class="img img1"
+            src="src/images/woman-listening-to-music.jpg"
+            alt="Woman listening to music"
+          />
+
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+            veritatis beatae mollitia atque aut accusamus. Explicabo fugiat
+            eaque nihil laudantium, hic vel, labore error, minus excepturi ab
+            assumenda quod commodi?
+          </p>
+
+          <p class="paragraph">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            quia dolorum consequatur veritatis facere consequuntur eos in quam
+            maxime magnam iste labore omnis asperiores, ut autem delectus
+            reprehenderit similique facilis.
+          </p>
+
+          <img
+            class="img img2"
+            src="src/images/man-listening-to-music.jpg"
+            alt="Man listening to music"
+          />
+
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia
+            alias debitis et quaerat! Amet eveniet pariatur id quasi! Aut,
+            numquam ad aliquid non voluptatem quibusdam similique laborum iste
+            totam dignissimos.
+          </p>
+        </article>
+      </main>
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <div class="container">
+          <p>© 2025 MyMelody. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
+    <noscript>
+      <div class="noscript-notice container">
+        Oops! Some features require JavaScript.
+      </div>
+    </noscript>
     <script src="scripts.js"></script>
   </body>
 </html>
